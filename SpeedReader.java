@@ -42,7 +42,7 @@ public class SpeedReader {
 			System.out.println("Not enough arguments! Please input <filename> <width> <height> <font size> <wpm>");
 			return;
 		}
-		SpeedReader reader = new SpeedReader("text1.txt", 400, 400, 24, 350);
+		SpeedReader reader = new SpeedReader(args[0],Integer.parseInt(args[1]),Integer.parseInt(args[2]),Integer.parseInt(args[3]),Integer.parseInt(args[4]));
 		reader.demonstratePanel();
 		//printStaggered();
 		// TODO Auto-generated method stub
