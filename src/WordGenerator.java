@@ -3,10 +3,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class WordGenerator {
+	
 	public String thisWord;
 	public Scanner text;
-	public int wordIndex;
-	public int wordLength;
+	public int wordCount;
 	public int sentCount;
 
 	/**
@@ -17,8 +17,7 @@ public class WordGenerator {
 	 */
 	public WordGenerator(String filename) throws IOException {
 		text = new Scanner(new File(filename));
-	    if (text.hasNext()) {
-	    } else {
+	    if (!text.hasNext()) {
 	    	System.out.println(filename + " is an empty document!");
 	    }
 		// TODO Auto-generated constructor stub
@@ -38,14 +37,18 @@ public class WordGenerator {
 	 */
 	public String next(){
 		String newWord = text.next();
-		wordLength = newWord.length();
-		wordIndex++;
+		wordCount++;
 		if (checkSent(newWord)) {
     		sentCount++;
 		}
 		return newWord;
 	}
 	
+	/**
+	 * 
+	 * @param word: a string
+	 * @return whether or not the string is the end of a sentence
+	 */
 	public boolean checkSent(String word){
 		int i = word.length() - 1;
 		return (word.charAt(i) == '.' || word.charAt(i) == '!' || word.charAt(i) == '?' );
@@ -56,7 +59,7 @@ public class WordGenerator {
 	 * @return the number of words produced by the WordGenerator so far.
 	 */
 	public int getWordCount(){
-		return wordIndex;
+		return wordCount;
 	}
 	
 	/**
