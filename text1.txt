@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 THE LEATHER FUNNEL
 
 My friend, Lionel Dacre, lived in the Avenue de Wagram, Paris. His house was that small one, with the iron railings and grass plot in front of it, on the left-hand side as you pass down from the Arc de Triomphe. I fancy that it had been there long before the avenue was constructed, for the grey tiles were stained with lichens, and the walls were mildewed and discoloured with age. It looked a small house from the street, five windows in front, if I remember right, but it deepened into a single long chamber at the back. It was here that Dacre had that singular library of occult literature, and the fantastic curiosities which served as a hobby for himself, and an amusement for his friends. A wealthy man of refined and eccentric tastes, he had spent much of his life and fortune in gathering together what was said to be a unique private collection of Talmudic, cabalistic, and magical works, many of them of great rarity and value. His tastes leaned toward the marvellous and the monstrous, and I have heard that his experiments in the direction of the unknown have passed all the bounds of civilization and of decorum. To his English friends he never alluded to such matters, and took the tone of the student and virtuoso; but a Frenchman whose tastes were of the 2same nature has assured me that the worst excesses of the black mass have been perpetrated in that large and lofty hall, which is lined with the shelves of his books, and the cases of his museum.
@@ -195,3 +196,7 @@ I sat in silence, overwhelmed at the extraordinary nature of the incident, and a
 “And this?” I asked, pointing to the marks upon the leathern neck.
 
 “She was a cruel tigress,” said Dacre, as he turned away. “I think it is evident that like other tigresses her teeth were both strong and sharp.”
+=======
+ This team has completed HW2. When will HW3 be posted?
+This is a new line! This document contains 23 words and 4 sentences.
+>>>>>>> 9335ef74af81108eb87d56c34cd6a67ba8fdd3e4
