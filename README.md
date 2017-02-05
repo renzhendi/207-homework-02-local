@@ -7,6 +7,7 @@ To do list:
 
 
 The Texts used to quiz came from:
+
 https://www.reddit.com/r/WritingPrompts/comments/5ozqb9/wp_two_men_play_a_game_of_chess_one_can_read/
 
 https://www.reddit.com/r/WritingPrompts/comments/5g58dz/wp_youre_a_regular_guy_who_works_at_a_home_depot/
