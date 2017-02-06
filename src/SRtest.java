@@ -88,7 +88,7 @@ public class SRtest {
 	 * @throws InterruptedException, IOException
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException {
-		String arg1 = "panda.txt";
+		String arg1 = "pandaTest.txt";
 		int arg2 = 480;
 		int arg3 = 360;
 		int arg4 = arg3/10;
