@@ -2,7 +2,7 @@
 
 1.) Yimin Wu & Cameron Chen
 
-2.) Our speed reader takes 5 arguments <filename> <width> <height> <font size> <wpm> and displays words like Spritz, one by one with the focus letter colored red and centered.
+2.) Our speed reader takes 5 arguments <filename> <width> <height> <font size> <wpm> and displays words like Spritz, one by one with the focus letter colored red and centered. (We completed all basic requirements and also available extra credits.)
 
 3.) Code citation list:
 
