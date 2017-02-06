@@ -2,7 +2,7 @@
 
 1.) Yimin Wu & Cameron Chen
 
-2.) Our speed reader takes 5 arguments <filename> <width> <height> <font size> <wpm> and displays words like Spritz, one by one with the focus letter centered.
+2.) Our speed reader takes 5 arguments <filename> <width> <height> <font size> <wpm> and displays words like Spritz, one by one with the focus letter colored red and centered.
 
 3.) Code citation list:
 
@@ -15,7 +15,7 @@ http://beginnersbook.com/2013/12/java-string-substring-method-example/
 We learned Integer.parseInt() function from:
 http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
 
-4.) The Texts used to quiz came from:
+4.) The texts used to quiz came from:
 
 https://www.reddit.com/r/WritingPrompts/comments/5ozqb9/wp_two_men_play_a_game_of_chess_one_can_read/
 
