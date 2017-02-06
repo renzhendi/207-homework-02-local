@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.io.IOException;
 
-
 public class SRtest {
 	
 	public WordGenerator word;
@@ -19,50 +18,80 @@ public class SRtest {
 	}
 	
 	/**
+	 * creates the panel to display animated words.
 	 * 
 	 * @throws InterruptedException
-	 * creates the panel to display animated words.
 	 * 
 	 * We learned examples of getFontMetrics() from Oracle:
 	 * https://docs.oracle.com/javase/tutorial/2d/text/measuringtext.html
 	 */
 	public void demonstratePanel() throws InterruptedException {
-		// create a panel
 		DrawingPanel panel = new DrawingPanel(width, height);
-	    Graphics g = panel.getGraphics();
-	    Font f = new Font("Courier", Font.BOLD, fontSize);
-	    FontMetrics metrics = g.getFontMetrics(f);
-	    g.setFont(f);
-	    // print a word to the center of the panel
+		Font f = new Font("Courier", Font.BOLD, fontSize);
 	    while(word.hasNext()){
-	    	String text = word.next();
+	    	Graphics g = panel.getGraphics();
 	    	g.setColor(Color.black);
-	    	g.drawString(text, (width - metrics.stringWidth(text)) / 2, ((height - metrics.getHeight()) / 2) + metrics.getAscent());
+		    g.setFont(f);
+	    	focusDisplay(word.next(), g, g.getFontMetrics(f));
 	    	Thread.sleep(60000/wpm);
-	    	g.setColor(Color.white);
-	    	g.fillRect(0, 0, width, height);
+	    	panel.clear();
 	    }
-	    System.out.println("The number of words is " + word.getWordCount() + ".");
-	    System.out.println("The number of sentences is " + word.getSentenceCount() + ".");
+	    System.out.println("There are " + word.getWordCount() + " word(s) and " + word.getSentenceCount() + " sentence(s).");
 	}
 	
 	/**
+	 * decides on which letter of the word to focus, and pass on to display
 	 * 
-	 * @param args: <filename> <width> <height> <font size> <wpm>
+	 * @param str: the word to be displayed
+	 * @param grf: the graphics on which the word will be displayed
+	 * @param met: font metrics of the current graphics
+	 */
+	public void focusDisplay(String str, Graphics grf, FontMetrics met){
+		int wordLength = str.length();
+		if (wordLength < 2){focusHelper(str, grf, met, 0, wordLength);}
+		else if (wordLength <6){focusHelper(str, grf, met, 1, wordLength);}
+		else if (wordLength <10){focusHelper(str, grf, met, 2, wordLength);}
+		else if (wordLength <14){focusHelper(str, grf, met, 3, wordLength);}
+		else {focusHelper(str, grf, met, 4, wordLength);}
+		// System.out.println(str); // for testing only
+	}
+	
+	/**
+	 * centers the word around the red focus letter
+	 * 
+	 * @param str: the word to be displayed
+	 * @param grf: the graphics on which the word will be displayed
+	 * @param met: font metrics of the current graphics
+	 * @param focusIndex: the index of the focus letter
+	 * @param wordLength: the length of the word
+	 * 
+	 * We learned examples of substring() from the following web site:
+	 * http://beginnersbook.com/2013/12/java-string-substring-method-example/
+	 */
+	public void focusHelper(String str, Graphics grf, FontMetrics met, int focusIndex, int wordLength){
+		int y = ((height - met.getHeight()) / 2) + met.getAscent();
+		String op = str.substring(0, focusIndex);
+		String ed = str.substring(focusIndex+1, wordLength);
+		String focus = str.substring(focusIndex,focusIndex+1);
+		int opL = met.stringWidth(op);
+		int focL = met.stringWidth(focus);
+		grf.drawString(op, (width-focL)/2-opL, y);
+		grf.drawString(ed, (width+focL)/2, y);
+		grf.setColor(Color.red);
+		grf.drawString(focus, (width-focL)/2, y);
+		// System.out.println(op+"|"+focus+"|"+ed); // for testing only
+	}
+	
+	/**
+	 * enables testing in Eclipse
+	 * 
 	 * @throws InterruptedException, IOException
-	 * implements command-line usage of the SpeedReader program.
-	 * 
-	 * We learned Integer.parseInt() function from stackoverflow:
-	 * http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
-	 * 
-	 * We retrieved the sample text from Wikipedia:
-	 * https://en.wikipedia.org/wiki/Giant_panda
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException {
 		String arg1 = "panda.txt";
-		int arg2 = 640;
-		int arg3 = 480;
-		int arg4 = 32;
+		int arg2 = 480;
+		int arg3 = 360;
+		int arg4 = arg3/10;
 		int arg5 = 360;
 		SRtest reader = new SRtest(arg1, arg2, arg3, arg4, arg5);
 		reader.demonstratePanel();

@@ -6,14 +6,15 @@ public class WordGenerator {
 	
 	public String thisWord;
 	public Scanner text;
-	public int wordCount;
-	public int sentCount;
+	public int wordLength;
+	private int wordCount;
+	private int sentCount;
 
 	/**
+	 * constructs a new generator that processes text from the given file.
 	 * 
 	 * @param filename: a string of the name of the file to be read
 	 * @throws IOException 
-	 * constructs a new generator that processes text from the given file.
 	 */
 	public WordGenerator(String filename) throws IOException {
 		text = new Scanner(new File(filename));
@@ -37,6 +38,7 @@ public class WordGenerator {
 	 */
 	public String next(){
 		String newWord = text.next();
+		wordLength = newWord.length();
 		wordCount++;
 		if (checkSent(newWord)) {
     		sentCount++;
@@ -51,7 +53,8 @@ public class WordGenerator {
 	 */
 	public boolean checkSent(String word){
 		int i = word.length() - 1;
-		return (word.charAt(i) == '.' || word.charAt(i) == '!' || word.charAt(i) == '?' );
+		return (word.charAt(i) == '.' || word.charAt(i) == '!' || word.charAt(i) == '?' ||
+				word.endsWith(".\"") || word.endsWith("!\"") || word.endsWith("?\""));
 	}
 	
 	/**
