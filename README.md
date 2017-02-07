@@ -25,6 +25,7 @@ https://www.reddit.com/r/WritingPrompts/comments/5pi8t0/pi_everybody_in_the_worl
 
 https://www.reddit.com/r/WritingPrompts/comments/5er89r/wp_everytime_someone_has_a_blonde_moment_they_get/
 
+
 5.) The questions for the four texts with associated quizzes.
 
 250 wpm (text2.txt)
@@ -57,12 +58,15 @@ q3: Why does the narrator avoid other people?
 
 q4: What is the doctor’s power?
 
+
 6.) The names and Grinnell emails of your participants.
+
   McNamara, John      mcnamara@grinnell.edu
   
   Bresnahan, Cara     bresnaha@grinnell.edu	
   
   Baumgartel, Andrea  baumgart1@grinnell.edu	
+  
   
 
 7.) The results of your quizes as described above.
